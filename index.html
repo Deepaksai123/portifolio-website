@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTIFOLIO WEBSITE </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" class="close" onlick="closemenu()">close</a></li>
+                </ul>
+                <li><a href="" class="menu" onlcik="openmenu()">Menu<a></a></li>
+            </nav>
+    <div class="header-text">
+        <h1>Hi,I'm <span>Deepak</span></h1>
+        <p> enthusiastic in Fullstack Web development</p>
+    </div>
+    </div>
+    </div>
+<!----about-->
+<div id="about">
+    <div class="container">
+        <div class="row">
+        <div class="about-col-1"><img src="images/27280.jpg"></div>
+        <div class="about-col-2"><h1 class="sub-title">About Me</h1>
+        <p>Hello  everyone, myself  kota  deepak  sai completed  Btech  in  2024  as  information<br>
+           technology  student  from  Anil Neerukonda  Institute  Of  Technology. Throughout  my<br>
+           academic  journey,i  have  enhanced  both  my  technical  skills  and  communication <br>
+           skills , enabling  me  to  confidently  participate  in  interviews.
+        </p><div class="tab-titles">
+            <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
+            <p class="tab-links" onclick="opentab('Experience')">Experience</p>
+            <p class="tab-links" onclick="opentab('Education')">Education</p>
+        </div>
+        <div class="tab-contents active-tab" id="Skills">
+            <ul>
+                <li><span>Web Development</span><br>HTML , CSS , Javascript </li>
+                <li><span>Programming Languages</span><br>Python , Java , SQL </li>
+                <li><span>Core</span><br>Ojbect Oriented Programming , Data structures , Database Management System </li>
+            </ul>
+        </div>
+        <div class="tab-contents" id="Experience">
+            <ul>
+                <li><span>20/05/2023 - 20/06/2023</span><br>One month internship as a Data Analyst in "FluentGrid" Company.<br>Designed and developed interactive Dashbiard using PowerBi </li>
+            </ul>
+        </div>
+        <div class="tab-contents" id="Education">
+            <ul>
+                <li><span>BTech</span><br>Information Technology (2020 - 2024) - 7.8cgpa  </li>
+                <li><span>Intermediate</span><br>M.P.C (2018-2020) -9.6cgpa </li>
+            </ul>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+<!---------------------projects-->
+<div id="projects">
+    <div class="container">
+        <h1 class="sub-title">My Projects</h1>
+        <div class="projects-list">
+            <div><h2>Quiz Management System</h2>
+                <p>Developed a well designed application that helps<br> teachers to conduct qizzes and to analyze students<br> performence based on results<br>skills:Java Swings for GUI , MySQL for backend, VSCode as IDE</p>
+                <a href="https://github.com/Deepaksai123/Quiz_project"> github link</a>
+            </div>
+            <div><h2>Fast food website </h2>
+                <p>Developed a well designed social media website named as "socialbook".<br>Using HTML and CSS the webpages are designed effectively similar to linkedin.<br>skills:HTML , CSS , VSCode as IDE</p>
+                <a href="https://github.com/Deepaksai123/Socialbook-webproject-.git">github link</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!----------------------------contact-->>
+<div id="contact">
+<div class="container">
+    <div class="row">
+        <div class="contact-left">
+            <h1>Contact Me</h1>
+            <p>deepakkota66@gmail.com</p>
+            <P>+91 8978975773</P><br><br>
+            <a href="https://www.linkedin.com/in/deepak-sai-b3877b219?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="linkedin">linkedinprofile</a><br><br><br>
+        <a type="button" class="btn1" href="https://docs.google.com/document/d/16DfvazqSoHrt-DgyhHnrPJaZ3bL2xIlW/edit?usp=drive_link&ouid=117048910306343097710&rtpof=true&sd=true"> Download CV </a>
+    </div>
+            <div class="contact-right">
+            <form name="submit-to-google-sheet">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="Message" rows="4" placeholder="Message"></textarea>
+                <button type="button" class="btn1">Submit</button>
+            </form>
+            <span id="msg"></span>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+<script>
+    var sidemeu = document.getElementById("sidemenu");
+    function openmenu(){
+        sidemeu.style.right ="0";
+    }
+    function closemenu(){
+        sidemeu.style.right ="-200px";
+    }
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwTAYrDLT32J8TCialastgLcn8UoS-1oHrYlGhlw30BUZGSohZLMxx3iBCLPAf5spJ0/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully "
+            setTimeout(function(){
+                msg.innerHTML =""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
